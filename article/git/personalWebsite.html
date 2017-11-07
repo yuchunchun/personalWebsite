@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box {
+			margin: 0 auto;
+			text-align: center;
+		}
+		p {
+			line-height: 30px;
+		}
+		.indentation {
+			text-indent: 2em;
+		}
+
+		.imgDiv {
+			margin-left:100px;
+			width: 600px;
+			height: 400px;
+			text-align: center;
+		}
+
+		.imgDiv img {
+			width: auto;  
+			height: auto;  
+			max-width: 100%;  
+			max-height: 100%;  
+			border-radius: 2px;
+		}
+
+		.imgDiv img:hover{
+			border: 1px solid #000;
+		}
+
+		#img_hide_div {
+			width: 80%;
+			height: 80%;
+			padding: 20px 0px 20px 0px;
+			position: fixed;  
+			margin: auto; 
+			top: 0; 
+			left: 0; 
+			bottom: 0; 
+			right: 0; 
+			background-color:rgba(4,4,4,0.5);
+			text-align: center;
+			display: none;
+		}
+
+		#img_hide_div .preImg {
+			border-radius: 10px;
+			cursor: pointer; 
+			width:70px;
+			height: 40px;
+			color:#fff; 
+			line-height: 40px; 
+			position: absolute;
+			bottom: 10%;
+			left: 40%; 
+			background-color: rgba(4,4,4,0.5);
+		}
+		
+		#img_hide_div .nextImg {
+			border-radius: 10px; 
+			cursor: pointer;
+			width:70px;
+			height: 40px;
+			line-height: 40px;
+			color:#fff;
+			position: absolute;
+			bottom: 10%;
+			right: 40%;
+			background-color: rgba(4,4,4,0.5);
+		}
+
+		#img_hide_div .offDiv {
+			position: absolute;
+			background-color: rgba(0,0,0,0.5);
+			top: 5px;
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 10px;
+			cursor: pointer;
+			color: #fff;
+			font-weight:800;
+			font-size: 30px;
+		}
+		#img_hide_div img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div style="height: 30px;"></div>
+		<h3 style="">个人静态网站搭建流程</h3>
+		<div style="height: 10px;"></div>
+	</div>
+	<p class="indentation introdunction">起初，我想搭建一个网站， 目的是找工作的时候能有一个个人作品。对于前端来讲，个人的作品应该是一个必备的技能，用来展示自己，同时，网站的质量又能简要扼要的说明自己所学的内容。出于这个目的，研究了一下个人网站的搭建。因为网站的内容不是很多，对虚拟服务器不太会使用，还需要租金等原因，所以最终权衡之下，选择了搭建一个静态的个人网站，没有后台数据库之类的，只是简单的一些前端界面。以后再研究一下虚拟服务器的使用。</p>
+
+	<p class="indentation">首先去github的官网上去注册一个账号
+		<a href="http://www.github.com" target="_blank">github官方网站</a>
+	</p>
+	<p class="indentation">注册好账号后，让我们先体验一下：</p>
+	
+	<div class="imgDiv" style="width: 500px;margin-top: 20px;">
+		<p style="text-align: left;margin-left:-50px;">新建一个仓库</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/git_home.png">
+	</div>
+
+	<div class="imgDiv" style="margin-top: -50px;">
+		<p style="text-align: left;margin-left:-50px;">
+			取项目名，并生成一个README的初始文件
+		</p>
+		<img ondblclick="show(this)" title="双击我放大查看" style="margin-left: -85px;" src="images/git/gitResposity_create.png">
+	</div>
+	
+	<div class="imgDiv" style="width: 520px;margin-top: 80px;">
+		<p style="margin-left: -50px;text-align: left;" >创建一个新文件</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/git_createFile.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: 50px;">
+		<p style="margin-left: -50px;text-align: left;" >文件内容如下，随意编写</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/create_detail.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: -70px;">
+		<p style="margin-left: -50px;text-align: left;" >点击commit后，回到test，点击settings</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/create_success.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: -20px;">
+		<p style="margin-left: -50px;text-indent:2em;text-align: left;" >设置Github Pages的信息，先将source的NONE下拉框选至marster branch，点击save，再拉下来的时候，你会发现多了青蓝色矩形内的内容</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/save.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: 50px;">
+		<p style="margin-left: -50px;text-align: left;" >点击网址，你会发现，可以访问你编写的代码信息</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/finish.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: -90px;">
+		<p style="margin-left: -50px;text-align: left;" >添加域名的解析设置，按如下添加一条</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/domain_mapping.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: -100px;">
+		<p style="margin-left: -50px;text-align: left;" >再进入Github仓库的setting里面，修改Custom domain，修改为域名的地址</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/bind_domain.png">
+	</div>
+
+	<div class="imgDiv" style="width: 520px;margin-top: 70px;">
+		<p style="margin-left: -50px;text-align: left;" >最后，登录你的域名试试吧</p>
+		<img ondblclick="show(this)" title="双击我放大查看" src="images/git/webpage_success.png">
+	</div>
+	<div id="img_hide_div" ">
+
+		<div class="offDiv" onclick="imgHide()" onmouseover="$(this).css({backgroundColor: '#ddd',color: '#000'});" onmouseout="$(this).css({backgroundColor: '#000',color: '#fff'});" title="点击关闭">×</div>
+		<img id="img_git" src="">
+
+		<div class="preImg" onclick="showPreImg(this)" onmouseover="$(this).css({backgroundColor: '#ddd',color: '#000'});" onmouseout="$(this).css({backgroundColor: 'rgba(4,4,4,0.5)',color: '#fff'});">前一张</div>
+		<div class="nextImg" onclick="showNextImg(this)" onmouseover="$(this).css({backgroundColor: '#ddd',color: '#000'});" onmouseout="$(this).css({backgroundColor: 'rgba(4,4,4,0.5)',color: '#fff'});">后一张</div>
+	</div>
+</body>
+</html>

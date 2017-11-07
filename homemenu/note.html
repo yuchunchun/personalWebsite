@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<div id="tree"></div>
+		<div id="content" class="content"></div>
+		<div style="clear: both;"></div>
+	</div>
+</body>
+	<script type="text/javascript">
+		// 生成菜单树
+		var tree = document.getElementById("tree");
+		var content = document.getElementById("content");
+		createTree(menuArray, tree);
+		treeBindEvent(tree, content);
+		
+	</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人网站</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/note.css">
+</head>
+<body>
+	<div class="titleNav">
+		<ul>
+			<li>
+				<a href="homemenu/home.html">主页</a>
+			</li>
+			<li>
+				<a href="homemenu/note.html" class="active">学习笔记</a>
+			</li>
+			<li>
+				<a href="homemenu/about.html">关于我</a>
+			</li>
+			<li>
+				<a href="homemenu/contect.html">联系方式</a>
+			</li>
+		</ul>
+	</div>
+	<div class="homeContent">
+		
+	</div>
+	<div class="footer">
+		<p>Designed by yuchunchun ! 2017</p>
+	</div>
+
+	<div title="回到顶部" class="top" onclick="document.body.scrollIntoView()">^</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/menuJsonArray.js"></script>
+	<script src="js/noteTree.js"></script>
+	<script src="js/git.js"></script>
+	<script src="js/cssReview.js"></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$.get("homemenu/note.html", function(data) {
+					/*optional stuff to do after success */
+					$(".homeContent").html(data);
+			});
+
+			$(".titleNav ul").on('click','a',function(event){
+				// 阻止链接默认行为
+				event.preventDefault();
+				$(this).addClass('active').parent().siblings().find('a').removeClass('active');
+				$.get(this.href, function(data) {
+					/*optional stuff to do after success */
+					$(".homeContent").html(data);
+				});
+			});
+
+			window.onscroll = function(event) {
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				if(scrollTop > 500){
+					$(".top").css('display', 'block');
+				}else{
+					$(".top").css('display', 'none');
+				}
+				
+			}
+
+		});
+	</script>
+</body>
+</html>

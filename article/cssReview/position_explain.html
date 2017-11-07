@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.importantFont{
+			display: inline-block;
+		    text-align: center;
+		    border: 1px solid #ccc;
+		    background-color: rgba(215, 215,205, 0.5);
+		    padding: 0px 4px;
+		    text-indent: 0em;
+		    border-radius: 2px;
+		}
+
+		.positionArticleBox{
+			padding: 0px 10px;
+			line-height: 30px;
+		}
+
+		.positionArticleBox .title {
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.positionArticleBox p {
+			text-indent: 2em;
+		}
+
+		.positionArticleBox .examplePic {
+			color: #aaa;
+		    font-size: 16px;
+		    font-weight: 400;
+		}
+		
+		.positionArticleBox a {
+			text-decoration: none;
+		}
+		
+		.positionArticleBox a:hover{
+			text-decoration: underline;
+		}
+
+		.relative_pic_div {
+			width: 400px;
+			height: 350px;
+			margin-left: 50px;
+			border: 1px solid #ccc;
+			margin-top: 10px;
+		}
+		
+		.relative_pic_div .relative_pic{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		#tryDiv .offDiv {
+			position: absolute;
+			background-color: rgba(c,c,c,0.5);
+			top: 5px;
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 10px;
+			cursor: pointer;
+			color: #fff;
+			border: 2px solid #ddd;
+			font-weight:800;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="positionArticleBox">
+		<div class="title">
+			<div style="height: 30px;"></div>
+			<h2 style="margin: 0 auto">position详解</h2>
+			<div style="height: 10px;"></div>
+		</div>
+		<p>
+			position的内容，在CSS中属于最基础的内容，但不可否认，它也是CSS中的一个难点，我在写这个个人博客的时候，用到了很多定位，很多时候，摆放的位置跟我的预期大相径庭，所以在这边，查阅的相关资料，先总结一下position的用法。
+		</p>
+		<p>
+			先说一说position的种类。position总共分为四种，
+			<span class="importantFont">static</span>，
+			<span class="importantFont">relative</span>，
+			<span class="importantFont">absolute</span>，
+			<span class="importantFont">fixed</span>
+		</p>
+		<h3>chap1：static</h3>
+		<p>
+			<span style="color: #7f00ff;">static</span>：静态的定位，该标志对定位的元素不起到任何作用，所以我们不做介绍。
+		</p>
+		<h3>chap2：relative</h3>
+		<p>
+			<span style="color: #7f00ff;">relative</span>：称为相对定位，就是微调元素的位置，让元素相对于原来的位置，进行位置调整。
+		</p>
+		<p class="examplePic">如下图所示：</p>
+		<div class="relative_pic_div">
+			<img class="relative_pic" src="images/cssReview/relative_pic.png">
+		</div>
+		<a style="margin-left: 50px;" href="javaScript: tryToTry('relativeTry')">亲自试一试</a>
+		<p>之前看过培训班里的资料，总结的相当好。相对定位的特点是：</p>
+		<p>1：不托标</p>
+		<p>2：老家留坑，形影分离</p>
+		<p>什么意思呢？解释一下就是，相对定位的元素，不脱离文档的标准流，真实的位置还是定位之前的位置，界面显示的是它的真实内容显示出来的影子，位置随意摆放。</p>
+		<p>知道相对定位的概念以及它的特点，那它的具体用途是干什么的呢？</p>
+		<p>其实，相对定位的用途主要分为两点，其一是对元素位置进行微量调整，其二呢，作为绝对定位的相对参考</p>
+		<h3>chap3：absolute</h3>
+		<p>
+			<span style="color: #7f00ff;">absolute</span>：称为绝对定位，相对于最近具有定位的祖宗元素进行定位。这里的祖宗，可能是父级元素，爷爷辈的元素，爷爷的父亲辈的，等等等等。。
+		</p>
+		<p>
+			注意：绝对定位的元素脱离标准流，对于脱离标准流的标签，标签就不区分所谓的行内元素、块级元素了，不需要display:block;就可以设置宽、高了。可以自己去练习练习增加记忆。
+		</p>
+		<p class="examplePic">看一个绝对定位的例子</p>
+		<div class="relative_pic_div">
+			<img class="relative_pic" src="images/cssReview/absolute_pic.png">
+		</div>
+		<a style="margin-left: 50px;" href="javaScript: tryToTry('absoluteTry')">亲自试一试</a>
+		<h3><span style="margin-left: 50px; color: red;">绝对定位的参考点，这个很重要！！！★</span></h3>
+		<p>1：绝对定位的参考点，如果是以<span style="color: red;font-weight: 700;">top</span>描述，那么定位的参考点就是<span style="color: red;font-weight: 700;">页面的左上角</span>，而不是浏览器的左上角。见下图所示：</p>
+		<div class="relative_pic_div">
+			<img class="relative_pic" src="images/cssReview/absolute_position_top.png">
+		</div>
+
+		<p>2：绝对定位的参考点，如果是以<span style="color: red;font-weight: 700;">bottom</span>描述，那么定位的参考点就是<span style="color: red;font-weight: 700;">首屏</span>窗口尺寸对应的页面左下角，见下图所示：</p>
+		<div class="relative_pic_div">
+			<img class="relative_pic" src="images/cssReview/absolute_position_bottom.png">
+		</div>
+		<p>3、以盒子为参考点</p>
+		<p>一个绝对定位的元素，如果父辈元素中出现了也定位了的元素，那么将以父辈这个元素，为参考点。这就是上面概念中讲的内容。</p>
+		<p>这边要注意几点：</p>
+		<ul style="margin-left: 50px;margin-top: 10px;">
+			<li>要听最近的已经定位的祖先元素的，不一定是父亲，可能是爷爷：</li>
+			<li>不一定是相对定位，任何定位，都可以作为参考点</li>
+			<li>绝对定位的儿子，<span style="color: red;font-weight: 700;">无视</span>参考的那个盒子的padding。这一点要注意。</li>
+		</ul>
+		
+		<div class="relative_pic_div">
+			<img class="relative_pic" src="images/cssReview/absoluteIgnorePaddingTry_img.png">
+		</div>
+		<a style="margin-left: 50px;" href="javaScript: tryToTry('absoluteIgnorePaddingTry')">亲自试一试</a>
+		<p>4、绝对定位的盒子居中</p>
+		<p>绝对定位后，所有标准的规则就都不适用了，所以margin：0 auto；失效</p>
+		<p>那我们应该怎么办呢，我们可以设置margin-left：-（1/2）*宽度；left：50%；就是left:50%; margin-left:负的宽度的一半。</p>
+		<h3>chap4：fixed</h3>
+		<p>
+			<span style="color: #7f00ff;">fixed</span>：称为固定定位，固定定位没什么多说的，就是相对于视口左上角的定位，固定定位 的元素脱离标准流。注意一点：IE6不支持。
+		</p>
+		<div id="tryDiv" style="border-radius: 5px; position: fixed;width: 800px;height: 100%;background-color: #ccc;right: -800px;top: 0px;text-align: center;color:#fff;">
+			<h3>测试小工具</h3>
+			<button style="display: block;text-align: left;height: 40px;background-color: yellowgreen;outline:none;border-radius: 7px;margin: 10px 0px 10px 50px;" onclick="startTest()">开始测试</button>
+			<textarea id="leftNeedParseDiv" style="width: 350px;border-radius: 30px;outline:none;float:left; height: 80%;background-color: #fff;margin-left: 40px;">
+			</textarea>
+			<div id="rightDisplayDiv" style="position: relative; outline:none;width: 350px;border-radius: 30px; float: right; margin-right: 40px;height: 80%;background-color: #fff;">				
+			</div>
+			<div class="offDiv" onclick="tryDivHide()" onmouseover="$(this).css({backgroundColor: 'rgba(1,1,1,0.5)',color: '#fff'});" 
+			onmouseout="$(this).css({backgroundColor: '#ccc',color: '#fff'});" title="点击关闭">×</div>
+		</div>
+	</div>
+</body>
+</html>

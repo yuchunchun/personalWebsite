@@ -1,0 +1,109 @@
+/*
+* @Author: 765
+* @Date:   2017-10-23 13:28:58
+* @Last Modified by:   yuchunchun
+* @Last Modified time: 2017-11-03 13:21:50
+*/
+body{
+	overflow: auto;
+	margin: 0px;
+	padding: 0px;
+
+}
+div, p, h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 清除浮动 */
+.clear {
+	zoom:1; /*==for IE6/7 Maxthon2==*/
+}    
+
+.clear :after {
+	clear:both;
+	content: "\0020";
+	display:block;
+	width: 0;
+	height: 0;
+	visibility:hidden;
+}   /*==for FF/chrome/opera/IE8==*/
+
+/* 导航部分CSS */
+.titleNav {
+	width: 100%;
+	height: 100px;
+	background-color: #527f76;
+	text-align: center;
+}
+
+.titleNav ul {
+	list-style: none;
+
+}
+
+.titleNav ul  li{
+	display: inline-block;
+}
+
+.titleNav ul  li a{
+	text-decoration: none;
+	color: #fff;
+	display: inline-block;
+	padding: 0px 50px;
+	margin: 0px 20px;
+	line-height: 100px;
+}
+
+.titleNav ul  li a:hover{
+	background-color: #32cd99;
+	color: #444;
+	height: 95px;
+	border-bottom: 5px solid #ff0000;
+}
+
+.titleNav .active{
+	background-color: #32cd99;
+	color: #444;
+	height: 95px;
+	border-bottom: 5px solid #ff0000;
+}
+
+/* 内容区域CSS */
+
+
+
+/* 版本部分CSS */
+
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: #527f76;
+	text-align: center;
+}
+
+.footer p {
+	height: 100px;
+	line-height: 100px;
+	color: #fff;
+}
+
+.top {
+	position: fixed;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	background-color: #ccc;
+	bottom: 150px;
+	right: 50px;
+	text-align: center;
+	display: none;
+	line-height: 60px;
+	cursor: pointer; 
+	font-size: 30px;
+	font-weight: 1000;
+}
+
+.top:hover{
+	background-color: #007fff;
+}
